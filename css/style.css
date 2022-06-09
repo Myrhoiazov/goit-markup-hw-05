@@ -740,14 +740,6 @@ body {
 
 /* Box Modal */
 
-.is-hidden{
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: all;
-
-  
-}
-
 .box-model {
   position: fixed;
   z-index: 1000;
@@ -760,8 +752,23 @@ body {
   align-items: center;
   justify-content: center;
 
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
 
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.box-model.is-hidden{
+  /* visibility: hidden; */
+  opacity: 0;
+  pointer-events: none;
+
+  
+}
+
+.box-model.is-hidden .form{
+  transform: scale(0.5);
 }
 
 .form {
@@ -776,6 +783,9 @@ body {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  transform: scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-title {
