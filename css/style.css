@@ -269,9 +269,7 @@ body {
   margin: 0 4px;
   cursor: pointer;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-link button:hover,
 .portfolio-link button:focus {
@@ -288,8 +286,6 @@ body {
 }
 
 .portfolio-items .item {
-  margin: 15px;
-
   width: 370px;
 
   border: 1px solid rgba(238, 238, 238, 1);
@@ -301,6 +297,8 @@ body {
 
   border: 1px solid rgba(238, 238, 238, 1);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  margin: 15px;
 }
 
 .portfolio-items .item:nth-child(3n) {
@@ -348,11 +346,9 @@ body {
 
   padding: 63px 24px;
 
-  width: 322px;
-
   font-family: 'Roboto';
   font-weight: 400;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.5;
   letter-spacing: 0.03em;
   color: var(--white-brand-color);
@@ -436,6 +432,13 @@ body {
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-btn:hover{
+  background-color: rgb(18, 18, 18);
+;
 }
 
 /* Our Work */
@@ -511,6 +514,7 @@ body {
 }
 
 .progress-link {
+  position: relative;
   list-style: none;
   margin-right: 30px;
 }
@@ -518,6 +522,32 @@ body {
 .progress-link:nth-child(3) {
   margin: 0;
 }
+
+.progress-img{
+  display: block;
+}
+
+.progress-text{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+
+
+font-weight: 700;
+font-size: 14px;
+line-height: 1.2;
+text-align: center;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+padding: 27px 82px;
+
+color: var(--white-brand-color);
+
+background-color: rgba(47, 48, 58, 0.8);;
+}
+
+
 
 /* Общий Title */
 .title {
@@ -665,13 +695,15 @@ body {
   border: 1px solid var(--blu-brand-color);
 }
 
+
+
 .partner-logo {
   width: 106px;
   height: 60px;
   fill: rgba(175, 177, 184, 1);
 }
 
-.our-partner-link:hover .partner-logo {
+.our-partner-bg:focus .partner-logo {
   fill: var(--blu-brand-color);
 }
 
